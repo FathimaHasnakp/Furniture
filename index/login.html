@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - FurniStyle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #5e915e;
+        }
+        .login-box {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        input {
+            display: block;
+            margin: 15px auto;
+            padding: 10px;
+            width: 80%;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 25px;
+            border: none;
+            background-color: #333;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-box">
+        <h2>Sign In</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button id="login-btn">Sign In</button>
+        <p id="error-msg" style="color:red;"></p>
+    </div>
+
+    <script>
+        document.getElementById('login-btn').addEventListener('click', () => {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Simple username/password check
+            if(username === "admin" && password === "1234") {
+                sessionStorage.setItem('loggedIn', 'true'); // save login status
+                window.location.href = "index.html"; // go to home page
+            } else {
+                document.getElementById('error-msg').textContent = "Incorrect username or password";
+            }
+        });
+    </script>
+</body>
+</html>

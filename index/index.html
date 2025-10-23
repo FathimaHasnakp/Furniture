@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FurniStyle</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+        <div id="top"></div> <!-- This is the target of the logo click -->
+        <!-- Rest of your page -->
+    </body>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo">
+                <a href="#top"><img src="/images/logo-removebg-preview.png" alt="FurniStyle Logo" height="200"></a>
+            </div>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#home"><b>Home</b></a></li>
+            <li><a href="#about"><b>About</b></a></li>
+            <li><a href="#products"><b>Products</b></a></li>
+            <li><a href="#reviews"><b>Reviews</b></a></li>
+            <li><a href="#contact"><b>Contact</b></a></li>
+        </ul>
+
+
+
+<div class="nav-right">
+    <div class="wishlist">❤️ <span id="wishlist-count">0</span></div>
+    <div class="cart">🛒 <span id="cart-count">0</span></div>
+    <!-- Logout button -->
+    <button id="logout-btn" style="display:none;">Logout</button>
+</div>
+
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <h1>Transform Your Home with Style</h1>
+            <p><b>Explore our premium furniture collection</b></p>
+            <a href="#categories" class="btn">Shop Now</a>
+        </div>
+        <div class="hero-image">
+            <img src="/./images/banner.jpeg" alt="Shoes">
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+        <h1 class="category-center">Top Categories</h1>
+        <div class="category-cards">
+            <div class="category-card">
+                <div class="icon-circle"><img src="/./images/chair2.jpeg" alt="Chairs"></div>
+                <h3>Chairs</h3>
+            </div>
+            <div class="category-card">
+                <div class="icon-circle"><img src="/images/table.jpeg" alt="Tables"></div>
+                <h3>Tables</h3>
+            </div>
+            <div class="category-card">
+                <div class="icon-circle"><img src="/images/iconbeg.jpeg" alt="Beds"></div>
+                <h3>Beds</h3>
+            </div>
+            <div class="category-card">
+                <div class="icon-circle"><img src="/images/iconsofa.jpeg" alt="Sofas"></div>
+                <h3>Sofas</h3>
+            </div>
+            <div class="category-card">
+                <div class="icon-circle"><img src="/images/wardrobe.jpeg" alt="Wardrobes"></div>
+                <h3>Wardrobes</h3>
+            </div>
+            <div class="category-card">
+                <div class="icon-circle"><img src="/images/lamb.jpeg" alt="Lamps"></div>
+                <h3>Lamps</h3>
+            </div>
+            <div class="category-card">
+                <div class="icon-circle"><img src="/images/iconbath.jpeg" alt="Desks"></div>
+                <h3>Bathtub</h3>
+            </div>
+            <div class="category-card">
+                <div class="icon-circle"><img src="/images/shelves.jpeg" alt="Shelves"></div>
+                <h3>Shelves</h3>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="/images/about.jpeg" alt="Showroom">
+            </div>
+
+            <div class="about-text">
+                <h1>About Us</h1>
+                <p>Welcome to Furnitured, where craftsmanship meets comfort.
+                    We design and create premium-quality furniture that transforms every house into a beautiful
+                    home.</p>
+                <p>Our Mission:
+                    To bring affordable luxury into every home through innovative designs and high-quality
+                    craftsmanship.
+
+
+                <p> Our Vision:
+                    To become the most trusted name in modern furniture by blending elegance, sustainability, and
+                    functionality.
+                </p>
+                <br>
+                <p>❤️ Why Choose Us:
+                </p>
+                <p>100% handcrafted & quality-tested furniture
+                </p>
+                <p>Eco-friendly materials & sustainable production
+                </p>
+                <p>Modern and customizable designs
+                </p>
+                <p>Exceptional after-sales support
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Products Section-->
+    <section class="products" id="products">
+        <h1 class="product-center">Our Products</h1>
+        <div class="product-grid">
+            <div class="product-card" data-category="chair">
+                <img src="/images/chair.jpeg" height="300px">
+                <h3 class="main">Cleo Chair</h3>
+                <p class="main">₹6,500</p>
+                <button class="add-cart">Add to Cart 🛒</button>
+                <button class="add-wishlist">❤️</button>
+                <a href="#contact" class="order-now-btn">Order Now </a>
+
+            </div>
+            <div class="product-card" data-category="table">
+                <img src="/images/tablepro.jpeg" height="300px">
+                <h3 class="main">Wooden Table</h3>
+                <p class="main">₹18,000</p>
+                <button class="add-cart">Add to Cart 🛒</button>
+                <button class="add-wishlist">❤️</button>
+                <a href="#contact" class="order-now-btn">Order Now </a>
+
+            </div>
+            <div class="product-card" data-category="bed">
+                <img src="/images/bed.jpeg" height="300px">
+                <h3 class="main">Elysia Bed</h3>
+                <p class="main">₹30,000</p>
+                <button class="add-cart">Add to Cart 🛒</button>
+                <button class="add-wishlist">❤️</button>
+                <a href="#contact" class="order-now-btn">Order Now </a>
+
+            </div>
+            <div class="product-card" data-category="sofa">
+                <img src="/images/sofa.jpeg" height="300px">
+                <h3 class="main">Velora Sofa</h3>
+                <p class="main">₹35,000</p>
+                <button class="add-cart">Add to Cart 🛒</button>
+                <button class="add-wishlist">❤️</button>
+                <a href="#contact" class="order-now-btn">Order Now </a>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- <-- Reviews Section-->
+    <section class="reviews" id="reviews">
+        <h2>Customer Reviews</h2>
+        <div class="review-cards">
+            <div class="review-card">
+                <img src="/images/people.jpeg" alt="John Doe">
+                <h4>John Doe</h4>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>Great furniture! High quality and stylish.</p>
+            </div>
+            <div class="review-card">
+                <img src="/images/peopl2.jpeg" alt="">
+                <h4>Jane Smith</h4>
+                <p>⭐⭐⭐⭐</p>
+                <p>Very comfortable and affordable.</p>
+            </div>
+            <div class="review-card">
+                <img src="/images/peole1.jpeg" alt="Mike Johnson">
+                <h4>Mike Johnson</h4>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>Excellent design and fast delivery.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h1 class="main3">Contact Us</h1>
+        <div class="contact-container">
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <form>
+                    <label class="main1">Name</label>
+                    <input type="text" placeholder="Your Name" required>
+
+                    <label class="main1">Email</label>
+                    <input type="email" placeholder="Your Email" required>
+
+                    <label class="main1"> Product Name</label>
+                    <input type="text" placeholder="Product Name" required>
+
+                    <label class="main1">Message</label>
+                    <textarea placeholder="Your Message" required></textarea>
+
+                    <button type="submit" class="contact-btn"> <b>Send Message</b></button>
+                </form>
+            </div>
+
+            <!-- Google Map -->
+            <div class="contact-map">
+                <iframe src="https://www.google.com/maps/embed?... (your map URL)" width="100%" height="400"
+                    style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart & Wishlist Preview -->
+    <div class="cart-preview" id="cart-preview">
+        <h3>Cart Items</h3>
+        <div class="cart-items"></div>
+        <div class="cart-total">
+            Total: $<span id="cart-total">0</span>
+        </div>
+    </div>
+
+    <div class="wishlist-preview" id="wishlist-preview">
+        <h3>Wishlist Items</h3>
+        <div class="wishlist-items"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-left">
+            <h3>FurniStyle</h3>
+            <p>Stylish & affordable furniture for every home.</p>
+        </div>
+        <div class="footer-center">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+            </ul>
+        </div>
+        <div class="footer-right">
+            <a href="#">FB</a>
+            <a href="#">IG</a>
+            <a href="#">TW</a>
+        </div>
+    </footer>
+
+    <!-- Floating Social Buttons with Images -->
+    <div class="social-float">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/919876543210" class="whatsapp" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/yourusername" class="instagram" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+        </a>
+
+        <!-- Back to Top -->
+        <button id="backToTop">⬆️</button>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
