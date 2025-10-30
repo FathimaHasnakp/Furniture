@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
         let total = 0;
 
         cartItems.forEach((item, index) => {
-            // Fix: remove ₹ and commas before parsing
             let priceNumber = parseFloat(item.price.replace('₹', '').replace(/,/g, '').trim());
             total += priceNumber;
 
@@ -152,20 +151,90 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-const logoutBtn = document.getElementById('logout-btn');
 
-function checkLogin() {
-    if (sessionStorage.getItem('loggedIn') === 'true') {
-        logoutBtn.style.display = 'inline-block';
-    } else {
-        logoutBtn.style.display = 'none';
+// (function () {
+//     emailjs.init("mfSRGGNvc-o7YLotD");
+// })();
+
+// document.getElementById("contact-form").addEventListener("submit", function (e) {
+//     e.preventDefault();
+
+
+//     var templateParams = {
+//         from_name: document.getElementById("from_name").value,
+//         email_id: document.getElementById("email_id").value,
+//         message: document.getElementById("message").value,
+//     };
+
+//     emailjs.send("service_pg0h5mc", "template_5mmqtji", templateParams).then(
+//         (response) => {
+//             console.log('SUCCESS!', response.status, response.text);
+//         },
+//         (error) => {
+//             console.log('FAILED...', error);
+//         },
+//     )
+
+// });
+
+(function () {
+    emailjs.init("mfSRGGNvc-o7YLotD");
+})();
+
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Get input values
+    const fromName = document.getElementById("from_name").value.trim();
+    const emailId = document.getElementById("email_id").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    // Simple email validation regex
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Validation checks
+    if (fromName === "" || emailId === "" || message === "") {
+        alert("⚠️ Please fill out all fields.");
+        return;
     }
-}
 
-checkLogin(); // Run on page load
+    if (!emailPattern.test(emailId)) {
+        alert("⚠️ Please enter a valid email address.");
+        return;
+    }
 
-logoutBtn.addEventListener('click', () => {
-    sessionStorage.removeItem('loggedIn'); // clear login
-    window.location.href = "login.html";    // go back to login page
+    // Prepare parameters for EmailJS
+    const templateParams = {
+        from_name: fromName,
+        email_id: emailId,
+        message: message,
+    };
+
+    // Send email using EmailJS
+    emailjs.send("service_pg0h5mc", "template_5mmqtji", templateParams)
+        .then((response) => {
+            console.log("SUCCESS!", response.status, response.text);
+            alert("✅ Message sent successfully!");
+            document.getElementById("contact-form").reset();
+        })
+        .catch((error) => {
+            console.log("FAILED...", error);
+            alert("❌ Failed to send message. Please try again later.");
+        });
 });
 
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // CHANGE THIS LINE to select by ID
+    const menuToggle = document.getElementById('mobile-menu'); 
+    
+    const navLinks = document.querySelector('.nav-links');
+
+    // ... rest of the code ...
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+});
