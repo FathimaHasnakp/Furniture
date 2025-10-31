@@ -232,32 +232,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 (function () {
-    emailjs.init("mfSRGGNvc-o7YLotD");
+ emailjs.init("mfSRGGNvc-o7YLotD");
 })();
 
 document.getElementById("contact-form").addEventListener("submit", function (e) {
-    e.preventDefault();
+ e.preventDefault();
 
-    // Get input values
-    const fromName = document.getElementById("from_name").value.trim();
-    const emailId = document.getElementById("email_id").value.trim();
-    const message = document.getElementById("message").value.trim();
+ // Get input values
+const fromName = document.getElementById("from_name").value.trim();
+ const emailId = document.getElementById("email_id").value.trim();
+const message = document.getElementById("message").value.trim();
 
-    // Regular expressions for validation
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+ // Regular expressions for validation
+ const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     // Allows letters, spaces, hyphens, and apostrophes, minimum 2 characters.
     const namePattern = /^[a-zA-Z\s'-]{2,}$/; 
 
-    // Validation checks
-    if (fromName === "" || emailId === "" || message === "") {
-        alert("⚠️ Please fill out all fields.");
-        return;
-    }
+// Validation checks
+if (fromName === "" || emailId === "" || message === "") {
+ alert("⚠️ Please fill out all fields.");
+ return;
+ }
 
-    if (!emailPattern.test(emailId)) {
-        alert("⚠️ Please enter a valid email address.");
-        return;
-    }
+ if (!emailPattern.test(emailId)) {
+ alert("⚠️ Please enter a valid email address.");
+ return;
+ }
 
     // New Name Validation Check
     if (!namePattern.test(fromName)) {
@@ -265,24 +265,24 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
         return;
     }
 
-    // Prepare parameters for EmailJS
-    const templateParams = {
-        from_name: fromName,
-        email_id: emailId,
-        message: message,
-    };
+ // Prepare parameters for EmailJS
+ const templateParams = {
+ from_name: fromName,
+ email_id: emailId,
+ message: message,
+ };
 
-    // Send email using EmailJS
-    emailjs.send("service_pg0h5mc", "template_5mmqtji", templateParams)
-        .then((response) => {
-            console.log("SUCCESS!", response.status, response.text);
-            alert("✅ Message sent successfully!");
-            document.getElementById("contact-form").reset();
-        })
-        .catch((error) => {
-            console.log("FAILED...", error);
-            alert("❌ Failed to send message. Please try again later.");
-        });
+ // Send email using EmailJS
+ emailjs.send("service_pg0h5mc", "template_5mmqtji", templateParams)
+ .then((response) => {
+ console.log("SUCCESS!", response.status, response.text);
+alert("✅ Message sent successfully!");
+ document.getElementById("contact-form").reset();
+})
+ .catch((error) => {
+console.log("FAILED...", error);
+ alert("❌ Failed to send message. Please try again later.");
+ });
 });
 
 
